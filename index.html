@@ -76,7 +76,8 @@
           justify-content: center;
           gap: 0.75rem;
           list-style: none;
-          pointer-events: pointer;
+          cursor: pointer;
+          flex-flow: row wrap;
         }
         nav ul li a {
           color: #fff;
@@ -128,6 +129,9 @@
           margin-bottom: 0.5rem;
         }
 
+        main a {
+          overflow-wrap: anywhere;
+        }
         /* -------------
            Image Preview
         ------------- */
@@ -149,6 +153,7 @@
             <li><a onclick="loadContent('handvatten')">Handvatten</a></li>
             <li><a onclick="loadContent('praten')">Praten</a></li>
             <li><a onclick="loadContent('nu')">Wat nu?</a></li>
+            <li><a onclick="loadContent('literatuur')">Literatuur</a></li>
         </ul>
     </nav>
     <main id="content">
@@ -171,7 +176,7 @@
                 case 'home':
                     content.innerHTML = `<h2>Welkom bij Klik &amp; Klets</h2>
                         <h3>De plek waar u samen met uw kind (10-12 jaar) in gesprek gaat over zijn gevoelens rondom de onlinewereld.</h3>
-                       <p>De meeste kinderen brengen veel tijd online door. Daar beleven ze vaak plezier, maar toch brengt sociale media ook frustrerende gevoelens met zich mee, zoals frustratie, onzekerheid of stress. Uit onderzoek blijkt dat veel ouders het lastig vinden om hierover in gesprek te gaan. Mede doordat veel kinderen niet graag praten over hun mediagedrag. Hoe begin je zo’n gesprek? Hoe zorg je dat je kind zich veilig voelt om te delen wat het online ervaart?</p>
+                       <p>De meeste kinderen brengen veel tijd online door. Daar beleven ze vaak plezier aan, maar toch brengt sociale media ook frustrerende gevoelens met zich mee, zoals onzekerheid of stress (Twenge et al., 2017). Uit onderzoek blijkt dat veel ouders het lastig vinden om hierover in gesprek te gaan, omdat deze gesprekken vaak tot conflict leiden (Hiniker et al., 2016). Uit datzelfde onderzoek blijkt echter dat kinderen bereid zouden zijn meer met hun ouders te delen, wanneer zij zich nieuwsgierig en onbevooroordeeld op zouden stellen tegenover hun kinderen.</p>
         <p>Daarom is er <strong>Klik &amp; Klets</strong>. Deze website helpt u om op een open, speelse en niet-veroordelende manier met uw kind te praten over zijn of haar gevoelens rondom mediagebruik. Aan de hand van emoties zoals blijdschap, boosheid, trots of jaloezie ontdekt u wat er écht speelt in de digitale wereld van uw zoon of dochter.</p>
         <p>U vindt hier praktische handvatten, gespreksstarters en handige tips. Alles om het gesprek met uw kind op gang te brengen. Met aandacht voor de gevoelens van uw kind en met oprechte nieuwsgierigheid.</p>
        <ul>
@@ -181,10 +186,43 @@
                         </ul>`;
                     break;
                 case 'instructie':
-                    content.innerHTML = `<h2>Uitleg</h2><p>Hier komt de instructie en uitleg.</p>`;
+                    content.innerHTML = `<h2>Instructie en uitleg</h2><p>Klik & Klets helpt u als ouder om via herkenbare emoties een open gesprek te voeren over mediagebruik. In deze instructie wordt aan u uitgelegd hoe u het beste het gesprek aan kan gaan met uw kind, en hoe u dit op een fijne manier kan aanpakken. Hierbij wordt gebruik gemaakt van wetenschappelijke bronnen, die u ook in het keuzemenu onder het kopje “Literatuurlijst” kunt vinden.</p>
+                      <h3>1. Kies samen één emotie per keer.</h3>
+                      <p>Hoeveel en hoe vaak u de emoties bespreekt hangt volledig af van uw eigen weekschema, maar houd hierbij ook rekening met de verlangens van uw kind. Laat uw kind kiezen waar hij of zij zin in heeft, of begin met iets dat uw zelf herkent. We raden u aan om eerst met positieve emoties te beginnen, om zo het gesprek op een luchtige manier te starten.</p>
+                      <h3>2. Upload of maak een foto van uw kind met die emotie.</h3>
+                      <p>Het uploaden van een gepersonaliseerde foto maakt het persoonlijk en visueel. U kunt ook uw kind de emotie laten tekenen als uw kind dat liever doet. Maar wat u upload is volledig aan u en uw kind, dus wees vooral creatief!</p>
+                      <h3>3. Gebruik de bijpassende vragen.</h3>
+                      <p>Deze staan onder elke emotie en helpen het gesprek op gang. Ze beginnen vaak bij uzelf als ouder (“Ik voel me blij als...”), zodat u het goede voorbeeld kunt geven. Dit vraagt misschien een stukje kwetsbaarheid van u, maar dit kan de deur openen voor uw kind, om ook zijn/haar emotie te delen.</p>
+                      <h3>4. Neem de tijd en oordeel niet.</h3>
+                      <p>Gun uw kind de tijd en de ruimte om te praten en luister met oprechte interesse.</p>
+                      <h3>5. Alles mag, niets moet</h3>
+                        <p>Sommige kinderen praten graag, anderen tekenen liever en anderen kinderen zijn heel terughoudend. Onthoud: alles mag, niets moet! Uit onderzoek is gebleken dat pre-adolescenten het moeilijk vinden om hun emoties onder woorden te brengen, vooral wanneer zij zich niet veilig, gehoord of begrepen voelen. Echter wanneer ouders open, geïnteresseerd en zonder oordeel reageren, zijn kinderen eerder bereid om te delen wat er in hen omgaat (Hiniker et al., 2016). Dus gun uw kind de tijd om zijn emoties te uiten en geef hem ook de ruimte om dit op zijn eigen manier te doen.</p>
+                        <h3>6. Tot slot: koppel terug en geef erkenning.</h3>
+                        <p>Sluit het gesprek af door samen kort terug te blikken. Herhaal in uw eigen woorden wat uw kind heeft gedeeld en geef erkenning: “Ik vind het knap dat je dat vertelt” of “Dank je wel dat je dit met mij wilde delen.” Hiermee voelt uw kind zich serieus genomen en gewaardeerd. Bovendien leert het dat emoties delen iets positiefs en veiligs is.</p>
+
+                    `;
                     break;
                 case 'handvatten':
-                    content.innerHTML = `<h2>Handvatten</h2><p>Hier komen de handvatten voor gespreksvoering.</p>`;
+                    content.innerHTML = `<h2>Handvatten voor gespreksvoering met pre-adolescenten</h2><p>Veel ouders merken dat hun kind niet vanzelf vertelt wat hij of zij online meemaakt. Dit is volkomen normaal. Kinderen van 10–12 jaar zitten in een spannende fase: ze willen zelfstandiger zijn, maar hebben nog steeds veel behoefte aan steun en veiligheid (Steinberg, 2011). Toch is het belangrijk voor ouders om betrokken te blijven, om zo inzicht te krijgen in het mediagebruik van hun kind en de invloed daarvan op het leven van het kind. Hieronder vindt u zes praktische tips voor een goed gesprek met uw kind.</p>
+                    <h3>1. Begin bij uzelf</h3>
+                    <p>Kinderen leren van hun ouders. Door u kwetsbaar op te stellen tegenover u kind door iets kleins te delen, nodigt u uw kind uit om zich ook open te stellen. Bovendien blijkt uit onderzoek van Hiniker en collega’s uit 2016 dat kinderen zich sneller openstellen als ouders zichzelf ook kwetsbaar opstellen.</p>
+                    <h3>2. Wees oprecht nieuwsgierig, zonder oordeel</h3>
+                    <p>Laat uw kind merken dat u écht wilt begrijpen wat er speelt. Ook als hij of zij iets zegt wat u lastig vindt. Livingstone en Helsper (2008) tonen aan dat open gesprekken het vertrouwen vergroten en online risico’s verminderen.</p>
+                    <h3>3. Gebruik gevoelens als ingang</h3>
+                    <p>Emoties zijn herkenbaar en helpen een ingang te creëren om moeilijke onderwerpen te bespreken. Het Nederlands Centrum Jeugdgezondheid (z.d.) benadrukt dat praten over gevoelens bijdraagt aan mediawijsheid en sociaal-emotionele veiligheid.</p>
+                    <h3>4. Respecteer grenzen</h3>
+                    <ul>
+                      <li><i>“Je hoeft nu niets te zeggen. Maar ik ben er als je wél wilt praten.”.</i></li>
+                      <li>Dwingen werkt averechts. Geef uw kind ruimte, maar blijf beschikbaar. </li>
+                      <li>Steinberg (2011) stelt dat het belangrijk is om autonomie en verbondenheid in balans te houden bij pre-adolescenten.</li>
+                    </ul>
+                    <h3>5. Gebruik humor of creativiteit</h3>
+                    <p>Kinderen staan meer open voor gesprekken die op een leuke en ontspannen manier verlopen (Hiniker et al., 2016)</p>
+                    <h3>6. Structurele aandacht</h3>
+                    <ul>
+                      <li>In de auto, bij het eten of voor het slapengaan ontstaan vaak de beste gesprekken.</li>
+                      <li>Structurele aandacht is erg belangrijk voor een goede mediaopvoeding (Nederlands Centrum Jeugdgezondheid., z.d.)</li>
+                    </ul>`;
                     break;
                 case 'praten':
                   content.innerHTML = `<h2>Kies een emotie en upload een foto die deze emotie laat zien.</h2>
@@ -229,7 +267,23 @@
                   <div id="questions" style="margin-top: 1rem; text-align: left;"></div>`;
                   break;
                 case 'nu':
-                  content.innerHTML = `<h2>Wat nu?</h2><p>Hier komt de volgende stap.</p>`;
+                  content.innerHTML = `<h2>Wat nu?</h2><p>Heeft uw kind iets heftigs meegemaakt of gedeeld dat online is gebeurd, zoals pesten, bedreiging, ongepaste beelden of contact met onbekenden? Neem dit altijd serieus. U hoeft dit niet alleen op te lossen. Neem indien nodig contact op met uw jeugdprofessional, juf of meester of een andere vertrouwenspersoon op school of in de wijk. Zij kunnen met u meedenken en u passende hulp bieden.</p>
+                  <p>Professionele steun kan erg belangrijk zijn, maar juist uw betrokkenheid als ouder is van groot belang.</p>
+                  <h3>Wat kan u als ouder doen?</h3>
+                  <ul>
+                    <li><strong>Blijf kalm</strong> en laat merken dat uw kind bij u terechtkan.</li>
+                    <li><strong>Neem uw kind serieus.</strong></li>
+                    <li><strong>Zoek samen hulp.</strong></li>
+                  `;
+                  break;
+                case 'literatuur':
+                  content.innerHTML = `<h2>Literatuurlijst</h2>
+                  <p>Hiniker, A., Schoenebeck, S.Y., Kientz, J.A. (2016). Not at the dinner table: Parents and children’s perspectives on family technology rules. (Wetenschappelijk onderzoek). Geraadpleegd via <a href='https://dl.acm.org/doi/pdf/10.1145/2818048.2819940'>https://dl.acm.org/doi/pdf/10.1145/2818048.2819940</a></p>
+                  <p>Livingstone, S., & Helsper, E. J. (2008). Parental mediaLivingstone, S., & Helsper, E. J. (2008). Parental mediation and children’s internet use. LSE Research Online (wetenschappelijk artikel). Geraadpleegd via <a href='https://eprints.lse.ac.uk/25723/1/Parental_mediation_and_children%27s_internet_use_%28LSERO_version%29.pdf'>https://eprints.lse.ac.uk/25723/1/Parental_mediation_and_children%27s_internet_use_%28LSERO_version%29.pdf</a></p>
+                    <p>Nederlands Centrum Jeugdgezondheid. (z.d.) Mediaopvoeding voor kinderen in de basisschoolleeftijd (6–12 jaar).<br> Geraadpleegd via <a href='https://www.ncj.nl/wp-content/uploads/media-import/docs/a5vierklapper_mediaopvoeding_6_12ncj_online.pdf'>https://www.ncj.nl/wp-content/uploads/media-import/docs/a5vierklapper_mediaopvoeding_6_12ncj_online.pdf</a></p>
+                    <p>Twenge, J. M., & Campbell, W. K. (2018). Associations between screen time and lower psychological well-being among children and adolescents: Evidence from a population-based study. Preventive Medicine Reports (Wetenschappelijk onderzoek). Geraadpleegd via <a href='https://www.sciencedirect.com/science/article/pii/S2211335518301827'>https://www.sciencedirect.com/science/article/pii/S2211335518301827</a></p>
+                    <p>Steinberg, L. (2011). Adolescence (9e editie).</p>
+                `;
                   break;
                 default:
                   content.innerHTML = `<p>Pagina niet gevonden.</p>`;
