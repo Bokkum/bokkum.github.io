@@ -32,6 +32,10 @@
           background: var(--color-bg);
           color: #333;
           line-height: 1.6;
+          background-image: url('/IMG_5417.jpeg');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
         }
         a {
           color: var(--color-link);
@@ -47,8 +51,11 @@
         ------------- */
         header {
           background-color: var(--color-header);
-          padding: 1.5rem;
+          padding: 2rem;
           text-align: center;
+          background-image: url('/IMG_5414.webp');
+          background-size: cover;
+          background-position: center;
         }
         header h1 a {
           color: #fff;
@@ -164,8 +171,10 @@
                 case 'home':
                     content.innerHTML = `<h2>Welkom bij Klik &amp; Klets</h2>
                         <h3>De plek waar u samen met uw kind (10-12 jaar) in gesprek gaat over zijn gevoelens rondom de onlinewereld.</h3>
-                        <p>De meeste kinderen brengen veel tijd online …</p>
-                        <ul>
+                       <p>De meeste kinderen brengen veel tijd online door. Daar beleven ze vaak plezier, maar toch brengt sociale media ook frustrerende gevoelens met zich mee, zoals frustratie, onzekerheid of stress. Uit onderzoek blijkt dat veel ouders het lastig vinden om hierover in gesprek te gaan. Mede doordat veel kinderen niet graag praten over hun mediagedrag. Hoe begin je zo’n gesprek? Hoe zorg je dat je kind zich veilig voelt om te delen wat het online ervaart?</p>
+        <p>Daarom is er <strong>Klik &amp; Klets</strong>. Deze website helpt u om op een open, speelse en niet-veroordelende manier met uw kind te praten over zijn of haar gevoelens rondom mediagebruik. Aan de hand van emoties zoals blijdschap, boosheid, trots of jaloezie ontdekt u wat er écht speelt in de digitale wereld van uw zoon of dochter.</p>
+        <p>U vindt hier praktische handvatten, gespreksstarters en handige tips. Alles om het gesprek met uw kind op gang te brengen. Met aandacht voor de gevoelens van uw kind en met oprechte nieuwsgierigheid.</p>
+       <ul>
                           <li><strong>Klik</strong> op een emotie.</li>
                           <li><strong>Klets</strong> samen over wat er online speelt.</li>
                           <li><strong>Verbind</strong> met uw kind</li>
@@ -178,32 +187,150 @@
                     content.innerHTML = `<h2>Handvatten</h2><p>Hier komen de handvatten voor gespreksvoering.</p>`;
                     break;
                 case 'praten':
-                    content.innerHTML = `<h2>Upload hier een foto die een emotie laat zien.</h2>
-                        <input type="file" id="image-upload" accept="image/*">
-                        <img id="uploaded-image" alt="Uploaded Image">`;
-                    break;
-                case 'nu':
-                    content.innerHTML = `<h2>Wat nu?</h2><p>Hier komt de volgende stap.</p>`;
-                    break;
-                default:
-                    content.innerHTML = `<p>Pagina niet gevonden.</p>`;
-            }
-        }
+                  content.innerHTML = `<h2>Kies een emotie en upload een foto die deze emotie laat zien.</h2>
+                  <div style="display: flex; gap: 0.7rem; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                    <button style="background-color: #ffd03b; color: black; padding: 0.5rem; border: none; border-radius: var(--radius);" onclick="document.getElementById('image-upload-yellow').click()">Blijdschap</button>
+                    <input type="file" id="image-upload-yellow" accept="image/*" style="display: none;" onchange="previewImage('#fff9e6', this)">
+                    </div>
+                    <div style="text-align: center;">
+                    <button style="background-color: #ed4d33; color: white; padding: 0.5rem; border: none; border-radius: var(--radius);" onclick="document.getElementById('image-upload-red').click()">Boosheid</button>
+                    <input type="file" id="image-upload-red" accept="image/*" style="display: none;" onchange="previewImage('#ffe6e2', this)">
+                    </div>  
+                    <div style="text-align: center;">
+                    <button style="background-color: #2b4780; color: white; padding: 0.5rem; border: none; border-radius: var(--radius);" onclick="document.getElementById('image-upload-blue').click()">Verdriet</button>
+                    <input type="file" id="image-upload-blue" accept="image/*" style="display: none;" onchange="previewImage('#e3ecff', this)">
+                    </div>
+                    <div style="text-align: center;">
+                    <button style="background-color: #5e469b; color: white; padding: 0.5rem; border: none; border-radius: var(--radius);" onclick="document.getElementById('image-upload-gray').click()">Angst</button>
+                    <input type="file" id="image-upload-gray" accept="image/*" style="display: none;" onchange="previewImage('#ebe4ff', this)">
+                    </div>
+                    <div style="text-align: center;">
+                    <button style="background-color: #fc7f9d; color: white; padding: 0.5rem; border: none; border-radius: var(--radius);" onclick="document.getElementById('image-upload-orange').click()">Schaamte</button>
+                    <input type="file" id="image-upload-orange" accept="image/*" style="display: none;" onchange="previewImage('#ffebf0', this)">
+                    </div>
+                    <div style="text-align: center;">
+                    <button style="background-color: #c1c1c1; color: white; padding: 0.5rem; border: none; border-radius: var(--radius);" onclick="document.getElementById('image-upload-purple').click()">Onzekerheid</button>
+                    <input type="file" id="image-upload-purple" accept="image/*" style="display: none;" onchange="previewImage('#f1f1f1', this)">
+                    </div>
+                    <div style="text-align: center;">
+                    <button style="background-color: #ff9435; color: white; padding: 0.5rem; border: none; border-radius: var(--radius);" onclick="document.getElementById('image-upload-green').click()">Trots</button>
+                    <input type="file" id="image-upload-green" accept="image/*" style="display: none;" onchange="previewImage('#fff3e8', this)">
+                    </div>
+                    <div style="text-align: center;">
+                    <button style="background-color: #32ae98; color: white; padding: 0.5rem; border: none; border-radius: var(--radius);" onclick="document.getElementById('image-upload-pink').click()">Stress</button>
+                    <input type="file" id="image-upload-pink" accept="image/*" style="display: none;" onchange="previewImage('#eefffc', this)">
+                    </div>
 
-        document.body.addEventListener('change', function(event) {
-            if (event.target.id === 'image-upload') {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const img = document.getElementById('uploaded-image');
-                        img.src = e.target.result;
-                        img.style.display = 'block';
-                    };
-                    reader.readAsDataURL(file);
-                }
+                  </div>
+                  <div id="uploaded-image" style="margin-top: 1rem; text-align: center;">
+                    <img id="result-image" style="max-width: 100%; border-radius: var(--radius); display: none;" />
+                  </div>
+                  <div id="questions" style="margin-top: 1rem; text-align: left;"></div>`;
+                  break;
+                case 'nu':
+                  content.innerHTML = `<h2>Wat nu?</h2><p>Hier komt de volgende stap.</p>`;
+                  break;
+                default:
+                  content.innerHTML = `<p>Pagina niet gevonden.</p>`;
+              }
             }
-        });
+
+// … elsewhere, after your switch …
+const questionBank = {
+  yellow: `
+    <h3>Bijpassende vragen – Blijdschap</h3>
+    <ul>
+      <li>Ik (ouder) voel me blij als… En jij, wanneer ben jij echt blij?</li>
+      <li>Wat gebeurt er in je lichaam als je blij bent?</li>
+      <li>Wat maakt jou online blij? En waarom maakt dat je blij?</li>
+    </ul>
+  `,
+  red: `
+    <h3>Bijpassende vragen – Boosheid</h3>
+    <ul>
+      <li>Ik (ouder) ben soms boos als… Ben jij ook weleens boos? Wanneer dan?</li>
+      <li>Wat gebeurt er in je lijf als je boos bent?</li>
+      <li>Wat maakt jou online boos? En waarom?</li>
+      <li>Wat helpt jou om weer rustig te worden?</li>
+    </ul>
+  `,
+  blue: `
+    <h3>Bijpassende vragen – Verdriet</h3>
+    <ul>
+      <li>Ik (ouder) ben soms wel is verdrietig als… En jij? Wanneer ben jij wel is verdrietig?</li>
+      <li>Wat voel je in je lijf als je verdrietig bent?</li>
+      <li>Wat maakt je online weleens verdrietig? En waarom?</li>
+      <li>Wat helpt jou als je verdrietig bent?</li>
+    </ul>
+  `,
+  gray: `
+    <h3>Bijpassende vragen – Angst</h3>
+    <ul>
+      <li>Ik (ouder) ben bang voor… Waar ben jij weleens bang voor?</li>
+      <li>Hoe merk je aan je lijf dat je bang bent?</li>
+      <li>Ben je online weleens bang?</li>
+      <li>Wat helpt jou om je weer veilig te voelen?</li>
+    </ul>
+  `,
+  orange: `
+    <h3>Bijpassende vragen – Schaamte</h3>
+    <ul>
+      <li>Ik (ouder) schaam me soms als… Heb jij dat ook weleens?</li>
+      <li>Wat doe je als je je schaamt?</li>
+      <li>Schaam je je weleens voor iets wat je online meemaakt? En waarom?</li>
+    </ul>
+  `,
+  purple: `
+    <h3>Bijpassende vragen – Onzekerheid</h3>
+    <ul>
+      <li>Ik (ouder) voel me soms onzeker als… En jij?</li>
+      <li>Wat denk je dan over jezelf?</li>
+      <li>Voel jij je weleens onzeker online? Wanneer bijvoorbeeld?</li>
+      <li>Wat geeft jou weer zelfvertrouwen?</li>
+    </ul>
+  `,
+  green: `
+    <h3>Bijpassende vragen – Trots</h3>
+    <ul>
+      <li>Ik (ouder) ben trots op mezelf als… En jij?</li>
+      <li>Waar ben je trots op van jezelf?</li>
+      <li>Ben je weleens trots op iets wat je online hebt gedeeld of gedaan?</li>
+      <li>Wanneer was jij trots op mij of ik op jou?</li>
+    </ul>
+  `,
+  pink: `
+    <h3>Bijpassende vragen – Stress</h3>
+    <ul>
+      <li>Ik (ouder) voel me gestrest als… Wanneer heb jij dat gevoel?</li>
+      <li>Waar voel je stress in je lichaam?</li>
+      <li>Krijg jij weleens stress van dingen online?</li>
+      <li>Wat helpt jou om te ontspannen?</li>
+    </ul>
+  `
+};
+
+function previewImage(color, input) {
+  const file = input.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const img = document.getElementById('result-image');
+    img.src = e.target.result;
+    img.style.display = 'block';
+
+    // set background
+    document.getElementById('content').style.backgroundColor = color;
+
+    // figure out which key was used (the id is "image-upload-<key>")
+    const key = input.id.replace('image-upload-', '');
+    // inject the questions HTML
+    document.getElementById('questions').innerHTML = questionBank[key] || '';
+  };
+  reader.readAsDataURL(file);
+}
+
     </script>
 </body>
 </html>
